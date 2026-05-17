@@ -73,28 +73,85 @@ a:hover {
   font-weight: 700;
 }
 
-.language-switch {
-  display: flex;
-  gap: 2px;
+.language-menu {
+  position: relative;
   margin-left: auto;
-  padding: 3px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.12);
 }
 
-.language-switch a {
-  display: inline-flex;
+.language-menu summary {
+  display: flex;
   align-items: center;
-  min-height: 30px;
-  padding: 0 10px;
-  border-radius: 3px;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 12px;
+  border-radius: 4px;
   color: rgba(255, 255, 255, 0.78);
+  cursor: pointer;
   font-size: 13px;
+  list-style: none;
 }
 
-.language-switch a.active {
+.language-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.language-menu summary::after {
+  width: 0;
+  height: 0;
+  border-top: 5px solid currentColor;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  content: "";
+}
+
+.language-menu[open] summary,
+.language-menu summary:hover {
   background: rgba(255, 255, 255, 0.22);
   color: #fff;
+}
+
+.language-menu nav {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  display: grid;
+  min-width: 156px;
+  padding: 6px 0;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+}
+
+.language-menu nav::before {
+  position: absolute;
+  top: -6px;
+  right: 18px;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  content: "";
+  transform: rotate(45deg);
+}
+
+.language-menu a {
+  position: relative;
+  display: block;
+  padding: 8px 14px;
+  color: var(--text);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.language-menu a:hover,
+.language-menu a.active {
+  background: var(--surface);
+  color: var(--link);
+}
+
+.language-menu a.active::before {
+  margin-right: 8px;
+  color: var(--accent);
+  content: "✓";
 }
 
 .nav-toggle {
