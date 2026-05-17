@@ -1,5 +1,6 @@
 site_name: 3D Inkjet Printer Documentation
 site_description: 3D inkjet printer product manual
+site_url: https://explorerlgd.github.io/3d-inkjet-printer-manual/
 repo_name: 3d-inkjet-printer-manual
 
 theme:
