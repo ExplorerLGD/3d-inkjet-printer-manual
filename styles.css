@@ -1,14 +1,12 @@
 :root {
-  --md-primary: #263238;
-  --md-primary-dark: #1b2429;
-  --md-accent: #00b8d4;
-  --md-bg: #ffffff;
-  --md-code-bg: #f5f7f9;
-  --md-text: #263238;
-  --md-muted: #6b7780;
-  --md-border: #e1e7eb;
-  --md-link: #0288a7;
-  --md-sidebar: #fafafa;
+  --header: #263238;
+  --accent: #00acc1;
+  --background: #ffffff;
+  --surface: #f7f9fa;
+  --text: #263238;
+  --muted: #60717d;
+  --border: #dfe6eb;
+  --link: #0288a7;
 }
 
 * {
@@ -21,20 +19,20 @@ html {
 
 body {
   margin: 0;
-  background: var(--md-bg);
-  color: var(--md-text);
+  background: var(--background);
+  color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.7;
 }
 
 a {
-  color: var(--md-link);
+  color: var(--link);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--md-accent);
+  color: var(--accent);
 }
 
 .site-header {
@@ -43,12 +41,11 @@ a:hover {
   z-index: 30;
   display: flex;
   align-items: center;
-  gap: 16px;
   height: 56px;
   padding: 0 24px;
-  background: var(--md-primary);
+  background: var(--header);
   color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.24);
 }
 
 .site-title {
@@ -76,7 +73,7 @@ a:hover {
   font-weight: 700;
 }
 
-.header-actions {
+.language-switch {
   display: flex;
   gap: 2px;
   margin-left: auto;
@@ -85,20 +82,18 @@ a:hover {
   background: rgba(255, 255, 255, 0.12);
 }
 
-.language-button {
+.language-switch a {
+  display: inline-flex;
+  align-items: center;
   min-height: 30px;
   padding: 0 10px;
-  border: 0;
   border-radius: 3px;
-  background: transparent;
   color: rgba(255, 255, 255, 0.78);
-  cursor: pointer;
-  font: inherit;
   font-size: 13px;
 }
 
-.language-button.active {
-  background: rgba(255, 255, 255, 0.2);
+.language-switch a.active {
+  background: rgba(255, 255, 255, 0.22);
   color: #fff;
 }
 
@@ -106,6 +101,7 @@ a:hover {
   display: none;
   width: 38px;
   height: 38px;
+  margin-right: 8px;
   border: 0;
   border-radius: 4px;
   background: transparent;
@@ -135,13 +131,13 @@ a:hover {
   height: calc(100vh - 56px);
   padding: 28px 0 32px;
   overflow: auto;
-  background: var(--md-bg);
+  background: var(--background);
 }
 
 .sidebar-title {
   margin-bottom: 14px;
   padding: 0 14px;
-  color: var(--md-muted);
+  color: var(--muted);
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
@@ -156,15 +152,15 @@ a:hover {
   display: block;
   padding: 8px 14px;
   border-left: 3px solid transparent;
-  color: var(--md-muted);
+  color: var(--muted);
   font-size: 14px;
 }
 
 .doc-nav a:hover,
 .doc-nav a.active {
-  border-left-color: var(--md-accent);
-  background: var(--md-sidebar);
-  color: var(--md-text);
+  border-left-color: var(--accent);
+  background: var(--surface);
+  color: var(--text);
 }
 
 .doc-content {
@@ -178,9 +174,8 @@ a:hover {
 
 .doc-article h1,
 .doc-article h2 {
-  position: relative;
   scroll-margin-top: 80px;
-  color: var(--md-text);
+  color: var(--text);
   font-weight: 400;
   line-height: 1.25;
 }
@@ -188,14 +183,14 @@ a:hover {
 .doc-article h1 {
   margin: 0 0 22px;
   padding-bottom: 12px;
-  border-bottom: 1px solid var(--md-border);
+  border-bottom: 1px solid var(--border);
   font-size: 32px;
 }
 
 .doc-article h2 {
   margin: 42px 0 14px;
   padding-bottom: 8px;
-  border-bottom: 1px solid var(--md-border);
+  border-bottom: 1px solid var(--border);
   font-size: 24px;
 }
 
@@ -208,35 +203,38 @@ a:hover {
   font-size: 18px;
 }
 
-.info-box {
+.info-list {
   display: grid;
   grid-template-columns: 160px minmax(0, 1fr);
-  gap: 0;
   margin: 28px 0 36px;
   overflow: hidden;
-  border: 1px solid var(--md-border);
+  border: 1px solid var(--border);
   border-radius: 4px;
-  background: var(--md-code-bg);
+  background: var(--surface);
 }
 
-.info-box strong,
-.info-box span {
+.info-list div {
+  display: contents;
+}
+
+.info-list dt,
+.info-list dd {
+  margin: 0;
   padding: 12px 14px;
-  border-bottom: 1px solid var(--md-border);
+  border-bottom: 1px solid var(--border);
 }
 
-.info-box strong:nth-last-child(2),
-.info-box span:last-child {
+.info-list div:last-child dt,
+.info-list div:last-child dd {
   border-bottom: 0;
 }
 
-.info-box strong {
-  color: var(--md-text);
+.info-list dt {
   font-weight: 700;
 }
 
-.info-box span {
-  color: var(--md-muted);
+.info-list dd {
+  color: var(--muted);
   background: #fff;
 }
 
@@ -244,21 +242,21 @@ table {
   width: 100%;
   margin-top: 14px;
   border-collapse: collapse;
-  border: 1px solid var(--md-border);
+  border: 1px solid var(--border);
   font-size: 15px;
 }
 
 th,
 td {
   padding: 11px 14px;
-  border: 1px solid var(--md-border);
+  border: 1px solid var(--border);
   text-align: left;
   vertical-align: top;
 }
 
 th {
   width: 160px;
-  background: var(--md-code-bg);
+  background: var(--surface);
 }
 
 .page-toc {
@@ -271,7 +269,7 @@ th {
 
 .page-toc-title {
   margin-bottom: 10px;
-  color: var(--md-muted);
+  color: var(--muted);
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
@@ -280,15 +278,15 @@ th {
 .page-toc a {
   display: block;
   padding: 4px 0 4px 12px;
-  border-left: 2px solid var(--md-border);
-  color: var(--md-muted);
+  border-left: 2px solid var(--border);
+  color: var(--muted);
   font-size: 13px;
 }
 
 .page-toc a:hover,
 .page-toc a.active {
-  border-left-color: var(--md-accent);
-  color: var(--md-link);
+  border-left-color: var(--accent);
+  color: var(--link);
 }
 
 @media (max-width: 1100px) {
@@ -308,6 +306,7 @@ th {
 
   .nav-toggle {
     display: block;
+    flex: 0 0 auto;
   }
 
   .site-title {
@@ -330,7 +329,7 @@ th {
     z-index: 20;
     width: min(300px, 86vw);
     padding: 20px 0;
-    border-right: 1px solid var(--md-border);
+    border-right: 1px solid var(--border);
     box-shadow: 6px 0 18px rgba(0, 0, 0, 0.16);
     transform: translateX(-100%);
     transition: transform 0.18s ease;
@@ -356,19 +355,19 @@ th {
     font-size: 16px;
   }
 
-  .info-box {
+  .info-list {
     grid-template-columns: 1fr;
   }
 
-  .info-box strong {
+  .info-list dt {
     border-bottom: 0;
   }
 
-  .info-box span {
-    border-bottom: 1px solid var(--md-border);
+  .info-list dd {
+    border-bottom: 1px solid var(--border);
   }
 
-  .info-box span:last-child {
+  .info-list div:last-child dd {
     border-bottom: 0;
   }
 }

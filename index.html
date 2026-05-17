@@ -3,89 +3,95 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>3D 喷墨打印机使用手册</title>
+    <title>3D &#21943;&#22696;&#25171;&#21360;&#26426;&#25991;&#26723;</title>
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body data-title-zh="3D 喷墨打印机使用手册" data-title-en="3D Inkjet Printer Documentation">
+  <body>
     <header class="site-header">
-      <button class="nav-toggle" type="button" aria-label="打开目录" aria-expanded="false" data-zh="打开目录" data-en="Open navigation" data-aria-only="true">
+      <button class="nav-toggle" type="button" aria-label="&#25171;&#24320;&#30446;&#24405;" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <a class="site-title" href="#overview" aria-label="3D Inkjet Printer Documentation">
+      <a class="site-title" href="#overview">
         <span class="site-mark">3D</span>
-        <span data-zh="3D 喷墨打印机文档" data-en="3D Inkjet Printer Documentation">3D 喷墨打印机文档</span>
+        <span>3D &#21943;&#22696;&#25171;&#21360;&#26426;&#25991;&#26723;</span>
       </a>
-      <div class="header-actions" aria-label="Language">
-        <button class="language-button active" type="button" data-lang="zh">中文</button>
-        <button class="language-button" type="button" data-lang="en">English</button>
-      </div>
+      <nav class="language-switch" aria-label="Language">
+        <a class="active" href="./">中文</a>
+        <a href="en/">English</a>
+      </nav>
     </header>
 
     <div class="doc-shell">
-      <aside class="doc-sidebar" aria-label="文档目录" data-zh="文档目录" data-en="Documentation navigation" data-aria-only="true">
-        <div class="sidebar-title" data-zh="3D Inkjet Printer" data-en="3D Inkjet Printer">3D Inkjet Printer</div>
+      <aside class="doc-sidebar" aria-label="&#25991;&#26723;&#30446;&#24405;">
+        <div class="sidebar-title">3D Inkjet Printer</div>
         <nav class="doc-nav">
-          <a class="active" href="#overview" data-zh="产品概览" data-en="Overview">产品概览</a>
-          <a href="#positioning" data-zh="设备定位" data-en="Device Positioning">设备定位</a>
-          <a href="#manual-scope" data-zh="手册范围" data-en="Manual Scope">手册范围</a>
-          <a href="#document-status" data-zh="文档状态" data-en="Document Status">文档状态</a>
+          <a class="active" href="#overview">&#20135;&#21697;&#27010;&#35272;</a>
+          <a href="#positioning">&#35774;&#22791;&#23450;&#20301;</a>
+          <a href="#manual-scope">&#25163;&#20876;&#33539;&#22260;</a>
+          <a href="#document-status">&#25991;&#26723;&#29366;&#24577;</a>
         </nav>
       </aside>
 
       <main class="doc-content">
         <article class="doc-article">
-          <h1 id="overview" data-zh="产品概览" data-en="Overview">产品概览</h1>
-          <p class="lead" data-zh="本页面是 3D 喷墨打印机使用手册的入口页，用于说明设备定位、文档范围和当前手册状态。页面采用文档站结构，后续可以继续扩展安装、操作、维护和故障排查内容。" data-en="This page is the entry point for the 3D inkjet printer manual. It introduces the device positioning, manual scope, and current documentation status. The page uses a documentation-site structure so installation, operation, maintenance, and troubleshooting content can be added later.">
-            本页面是 3D 喷墨打印机使用手册的入口页，用于说明设备定位、文档范围和当前手册状态。页面采用文档站结构，后续可以继续扩展安装、操作、维护和故障排查内容。
+          <h1 id="overview">&#20135;&#21697;&#27010;&#35272;</h1>
+          <p class="lead">
+            &#26412;&#39029;&#38754;&#26159; 3D &#21943;&#22696;&#25171;&#21360;&#26426;&#20351;&#29992;&#25163;&#20876;&#30340;&#20837;&#21475;&#39029;&#65292;&#29992;&#20110;&#35828;&#26126;&#35774;&#22791;&#23450;&#20301;&#12289;&#25991;&#26723;&#33539;&#22260;&#21644;&#24403;&#21069;&#25163;&#20876;&#29366;&#24577;&#12290;&#39029;&#38754;&#37319;&#29992;&#25991;&#26723;&#31449;&#32467;&#26500;&#65292;&#21518;&#32493;&#21487;&#20197;&#32487;&#32493;&#25193;&#23637;&#23433;&#35013;&#12289;&#25805;&#20316;&#12289;&#32500;&#25252;&#21644;&#25925;&#38556;&#25490;&#26597;&#20869;&#23481;&#12290;
           </p>
 
-          <div class="info-box">
-            <strong data-zh="当前版本" data-en="Current version">当前版本</strong>
-            <span>v0.1</span>
-            <strong data-zh="适用设备" data-en="Applicable device">适用设备</strong>
-            <span>3D Inkjet Printer</span>
-            <strong data-zh="文档状态" data-en="Document status">文档状态</strong>
-            <span data-zh="草稿" data-en="Draft">草稿</span>
-          </div>
+          <dl class="info-list">
+            <div>
+              <dt>&#24403;&#21069;&#29256;&#26412;</dt>
+              <dd>v0.1</dd>
+            </div>
+            <div>
+              <dt>&#36866;&#29992;&#35774;&#22791;</dt>
+              <dd>3D Inkjet Printer</dd>
+            </div>
+            <div>
+              <dt>&#25991;&#26723;&#29366;&#24577;</dt>
+              <dd>&#33609;&#31295;</dd>
+            </div>
+          </dl>
 
-          <h2 id="positioning" data-zh="设备定位" data-en="Device Positioning">设备定位</h2>
-          <p data-zh="该设备面向 3D 喷墨打印应用，围绕模型切片、喷墨数据生成、运动控制和打印任务执行建立完整工作流程。" data-en="The device is designed for 3D inkjet printing applications and supports a workflow around model slicing, inkjet data generation, motion control, and print job execution.">
-            该设备面向 3D 喷墨打印应用，围绕模型切片、喷墨数据生成、运动控制和打印任务执行建立完整工作流程。
+          <h2 id="positioning">&#35774;&#22791;&#23450;&#20301;</h2>
+          <p>
+            &#35813;&#35774;&#22791;&#38754;&#21521; 3D &#21943;&#22696;&#25171;&#21360;&#24212;&#29992;&#65292;&#22260;&#32469;&#27169;&#22411;&#20999;&#29255;&#12289;&#21943;&#22696;&#25968;&#25454;&#29983;&#25104;&#12289;&#36816;&#21160;&#25511;&#21046;&#21644;&#25171;&#21360;&#20219;&#21153;&#25191;&#34892;&#24314;&#31435;&#23436;&#25972;&#24037;&#20316;&#27969;&#31243;&#12290;
           </p>
 
-          <h2 id="manual-scope" data-zh="手册范围" data-en="Manual Scope">手册范围</h2>
-          <p data-zh="当前页面只保留产品概览。后续章节建议按文档站方式逐步拆分为安装、软件、打印流程、维护、故障排查和附录。" data-en="This page currently keeps only the product overview. Future sections should be added in the same documentation style, such as installation, software, printing workflow, maintenance, troubleshooting, and appendices.">
-            当前页面只保留产品概览。后续章节建议按文档站方式逐步拆分为安装、软件、打印流程、维护、故障排查和附录。
+          <h2 id="manual-scope">&#25163;&#20876;&#33539;&#22260;</h2>
+          <p>
+            &#24403;&#21069;&#39029;&#38754;&#21482;&#20445;&#30041;&#20135;&#21697;&#27010;&#35272;&#12290;&#21518;&#32493;&#31456;&#33410;&#24314;&#35758;&#25353;&#25991;&#26723;&#31449;&#26041;&#24335;&#36880;&#27493;&#25286;&#20998;&#20026;&#23433;&#35013;&#12289;&#36719;&#20214;&#12289;&#25171;&#21360;&#27969;&#31243;&#12289;&#32500;&#25252;&#12289;&#25925;&#38556;&#25490;&#26597;&#21644;&#38468;&#24405;&#12290;
           </p>
 
-          <h2 id="document-status" data-zh="文档状态" data-en="Document Status">文档状态</h2>
+          <h2 id="document-status">&#25991;&#26723;&#29366;&#24577;</h2>
           <table>
             <tbody>
               <tr>
-                <th data-zh="版本" data-en="Version">版本</th>
+                <th>&#29256;&#26412;</th>
                 <td>v0.1</td>
               </tr>
               <tr>
-                <th data-zh="状态" data-en="Status">状态</th>
-                <td data-zh="草稿，等待补充真实设备参数和操作截图" data-en="Draft, waiting for real device parameters and operation screenshots">草稿，等待补充真实设备参数和操作截图</td>
+                <th>&#29366;&#24577;</th>
+                <td>&#33609;&#31295;&#65292;&#31561;&#24453;&#34917;&#20805;&#30495;&#23454;&#35774;&#22791;&#21442;&#25968;&#21644;&#25805;&#20316;&#25130;&#22270;</td>
               </tr>
               <tr>
-                <th data-zh="发布方式" data-en="Publishing">发布方式</th>
-                <td data-zh="GitHub Pages 静态页面，无需构建步骤" data-en="GitHub Pages static site, no build step required">GitHub Pages 静态页面，无需构建步骤</td>
+                <th>&#21457;&#24067;&#26041;&#24335;</th>
+                <td>GitHub Pages &#38745;&#24577;&#39029;&#38754;&#65292;&#26080;&#38656;&#26500;&#24314;&#27493;&#39588;</td>
               </tr>
             </tbody>
           </table>
         </article>
       </main>
 
-      <aside class="page-toc" aria-label="本页目录" data-zh="本页目录" data-en="Page table of contents" data-aria-only="true">
-        <div class="page-toc-title" data-zh="本页内容" data-en="On this page">本页内容</div>
-        <a href="#overview" data-zh="产品概览" data-en="Overview">产品概览</a>
-        <a href="#positioning" data-zh="设备定位" data-en="Device Positioning">设备定位</a>
-        <a href="#manual-scope" data-zh="手册范围" data-en="Manual Scope">手册范围</a>
-        <a href="#document-status" data-zh="文档状态" data-en="Document Status">文档状态</a>
+      <aside class="page-toc" aria-label="&#26412;&#39029;&#30446;&#24405;">
+        <div class="page-toc-title">&#26412;&#39029;&#20869;&#23481;</div>
+        <a href="#overview">&#20135;&#21697;&#27010;&#35272;</a>
+        <a href="#positioning">&#35774;&#22791;&#23450;&#20301;</a>
+        <a href="#manual-scope">&#25163;&#20876;&#33539;&#22260;</a>
+        <a href="#document-status">&#25991;&#26723;&#29366;&#24577;</a>
       </aside>
     </div>
 

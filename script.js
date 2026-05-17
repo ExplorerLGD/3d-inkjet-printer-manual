@@ -1,37 +1,7 @@
 const navToggle = document.querySelector(".nav-toggle");
 const sidebar = document.querySelector(".doc-sidebar");
-const languageButtons = Array.from(document.querySelectorAll(".language-button"));
 const navLinks = Array.from(document.querySelectorAll(".doc-nav a, .page-toc a"));
-const sections = Array.from(document.querySelectorAll(".doc-article h1[id], .doc-article h2[id]"));
-
-function applyLanguage(lang) {
-  const suffix = lang === "en" ? "en" : "zh";
-  const fallback = suffix === "en" ? "zh" : "en";
-
-  document.documentElement.lang = suffix === "zh" ? "zh-CN" : "en";
-  document.title = document.body.dataset[`title${suffix[0].toUpperCase()}${suffix.slice(1)}`] || document.title;
-
-  document.querySelectorAll("[data-zh][data-en]").forEach((element) => {
-    const text = element.dataset[suffix] || element.dataset[fallback];
-    if (!text) {
-      return;
-    }
-
-    if (element.hasAttribute("aria-label")) {
-      element.setAttribute("aria-label", text);
-    }
-
-    if (element.dataset.lang === undefined && element.dataset.ariaOnly === undefined) {
-      element.textContent = text;
-    }
-  });
-
-  languageButtons.forEach((button) => {
-    button.classList.toggle("active", button.dataset.lang === suffix);
-  });
-
-  localStorage.setItem("manualLanguage", suffix);
-}
+const headings = Array.from(document.querySelectorAll(".doc-article h1[id], .doc-article h2[id]"));
 
 function closeSidebar() {
   sidebar?.classList.remove("open");
@@ -43,15 +13,11 @@ navToggle?.addEventListener("click", () => {
   navToggle.setAttribute("aria-expanded", String(isOpen));
 });
 
-languageButtons.forEach((button) => {
-  button.addEventListener("click", () => applyLanguage(button.dataset.lang));
-});
-
 navLinks.forEach((link) => {
   link.addEventListener("click", closeSidebar);
 });
 
-const sectionObserver = new IntersectionObserver(
+const observer = new IntersectionObserver(
   (entries) => {
     const current = entries
       .filter((entry) => entry.isIntersecting)
@@ -71,6 +37,4 @@ const sectionObserver = new IntersectionObserver(
   },
 );
 
-sections.forEach((section) => sectionObserver.observe(section));
-
-applyLanguage(localStorage.getItem("manualLanguage") || "zh");
+headings.forEach((heading) => observer.observe(heading));
