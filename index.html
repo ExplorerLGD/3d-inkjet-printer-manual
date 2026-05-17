@@ -6,239 +6,87 @@
     <title>3D 喷墨打印机使用手册</title>
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
-    <header class="topbar">
-      <button class="icon-button menu-toggle" type="button" aria-label="打开目录" aria-expanded="false">
+  <body data-title-zh="3D 喷墨打印机使用手册" data-title-en="3D Inkjet Printer Documentation">
+    <header class="site-header">
+      <button class="nav-toggle" type="button" aria-label="打开目录" aria-expanded="false" data-zh="打开目录" data-en="Open navigation" data-aria-only="true">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <div class="brand">
-        <span class="brand-mark">3D</span>
-        <div>
-          <strong>3D 喷墨打印机</strong>
-          <small>产品使用手册</small>
-        </div>
-      </div>
-      <div class="top-actions">
-        <a href="#quick-start">快速开始</a>
-        <a href="#support">维护支持</a>
+      <a class="site-title" href="#overview" aria-label="3D Inkjet Printer Documentation">
+        <span class="site-mark">3D</span>
+        <span data-zh="3D 喷墨打印机文档" data-en="3D Inkjet Printer Documentation">3D 喷墨打印机文档</span>
+      </a>
+      <div class="header-actions" aria-label="Language">
+        <button class="language-button active" type="button" data-lang="zh">中文</button>
+        <button class="language-button" type="button" data-lang="en">English</button>
       </div>
     </header>
 
-    <div class="layout">
-      <aside class="sidebar" aria-label="手册目录">
-        <div class="search-box">
-          <label for="manual-search">搜索手册</label>
-          <input id="manual-search" type="search" placeholder="输入关键词，例如喷头、切片、校准">
-        </div>
-        <nav class="toc">
-          <a href="#overview">产品概览</a>
-          <a href="#safety">安全须知</a>
-          <a href="#parts">设备组成</a>
-          <a href="#quick-start">快速开始</a>
-          <a href="#operation">日常操作</a>
-          <a href="#maintenance">维护保养</a>
-          <a href="#troubleshooting">故障排查</a>
-          <a href="#support">技术支持</a>
+    <div class="doc-shell">
+      <aside class="doc-sidebar" aria-label="文档目录" data-zh="文档目录" data-en="Documentation navigation" data-aria-only="true">
+        <div class="sidebar-title" data-zh="3D Inkjet Printer" data-en="3D Inkjet Printer">3D Inkjet Printer</div>
+        <nav class="doc-nav">
+          <a class="active" href="#overview" data-zh="产品概览" data-en="Overview">产品概览</a>
+          <a href="#positioning" data-zh="设备定位" data-en="Device Positioning">设备定位</a>
+          <a href="#manual-scope" data-zh="手册范围" data-en="Manual Scope">手册范围</a>
+          <a href="#document-status" data-zh="文档状态" data-en="Document Status">文档状态</a>
         </nav>
       </aside>
 
-      <main class="content">
-        <section class="hero manual-section" id="overview">
-          <div class="hero-copy">
-            <p class="eyebrow">User Manual</p>
-            <h1>3D 喷墨打印机使用手册</h1>
-            <p>
-              本页面用于沉淀产品交付、安装、操作、维护和排障信息。当前是基础页面骨架，
-              后续可以继续替换为真实设备图片、参数表和操作截图。
-            </p>
-            <div class="hero-actions">
-              <a class="primary-button" href="#quick-start">开始使用</a>
-              <a class="secondary-button" href="#troubleshooting">查看故障排查</a>
-            </div>
-          </div>
-          <div class="status-panel" aria-label="手册状态">
-            <div>
-              <span>版本</span>
-              <strong>v0.1</strong>
-            </div>
-            <div>
-              <span>适用设备</span>
-              <strong>3D Inkjet Printer</strong>
-            </div>
-            <div>
-              <span>文档状态</span>
-              <strong>草稿</strong>
-            </div>
-          </div>
-        </section>
+      <main class="doc-content">
+        <article class="doc-article">
+          <h1 id="overview" data-zh="产品概览" data-en="Overview">产品概览</h1>
+          <p class="lead" data-zh="本页面是 3D 喷墨打印机使用手册的入口页，用于说明设备定位、文档范围和当前手册状态。页面采用文档站结构，后续可以继续扩展安装、操作、维护和故障排查内容。" data-en="This page is the entry point for the 3D inkjet printer manual. It introduces the device positioning, manual scope, and current documentation status. The page uses a documentation-site structure so installation, operation, maintenance, and troubleshooting content can be added later.">
+            本页面是 3D 喷墨打印机使用手册的入口页，用于说明设备定位、文档范围和当前手册状态。页面采用文档站结构，后续可以继续扩展安装、操作、维护和故障排查内容。
+          </p>
 
-        <section class="manual-section" id="safety">
-          <div class="section-heading">
-            <p class="eyebrow">Safety</p>
-            <h2>安全须知</h2>
+          <div class="info-box">
+            <strong data-zh="当前版本" data-en="Current version">当前版本</strong>
+            <span>v0.1</span>
+            <strong data-zh="适用设备" data-en="Applicable device">适用设备</strong>
+            <span>3D Inkjet Printer</span>
+            <strong data-zh="文档状态" data-en="Document status">文档状态</strong>
+            <span data-zh="草稿" data-en="Draft">草稿</span>
           </div>
-          <div class="notice-grid">
-            <article>
-              <strong>电气安全</strong>
-              <p>接线、上电和维护前确认电源已断开，避免带电插拔控制板、喷头和运动轴线缆。</p>
-            </article>
-            <article>
-              <strong>喷头保护</strong>
-              <p>喷头未安装墨路或清洗液前不要长时间空喷，运输和停机时保持喷头密封。</p>
-            </article>
-            <article>
-              <strong>运动机构</strong>
-              <p>设备运行时不要将手伸入运动区域，调试限位、平台和滑轨前先进入维护模式。</p>
-            </article>
-          </div>
-        </section>
 
-        <section class="manual-section" id="parts">
-          <div class="section-heading">
-            <p class="eyebrow">Hardware</p>
-            <h2>设备组成</h2>
-          </div>
-          <div class="parts-grid">
-            <div class="part-card">
-              <span>01</span>
-              <h3>打印平台</h3>
-              <p>承载打印材料，负责定位、调平和打印区域基准。</p>
-            </div>
-            <div class="part-card">
-              <span>02</span>
-              <h3>喷头模块</h3>
-              <p>包含喷头、墨路连接、喷头驱动和必要的清洁维护结构。</p>
-            </div>
-            <div class="part-card">
-              <span>03</span>
-              <h3>控制系统</h3>
-              <p>负责运动控制、喷墨数据下发、温度监控和设备状态反馈。</p>
-            </div>
-            <div class="part-card">
-              <span>04</span>
-              <h3>切片软件</h3>
-              <p>导入模型、配置材料与通道、生成打印数据并发送到设备。</p>
-            </div>
-          </div>
-        </section>
+          <h2 id="positioning" data-zh="设备定位" data-en="Device Positioning">设备定位</h2>
+          <p data-zh="该设备面向 3D 喷墨打印应用，围绕模型切片、喷墨数据生成、运动控制和打印任务执行建立完整工作流程。" data-en="The device is designed for 3D inkjet printing applications and supports a workflow around model slicing, inkjet data generation, motion control, and print job execution.">
+            该设备面向 3D 喷墨打印应用，围绕模型切片、喷墨数据生成、运动控制和打印任务执行建立完整工作流程。
+          </p>
 
-        <section class="manual-section" id="quick-start">
-          <div class="section-heading">
-            <p class="eyebrow">Quick Start</p>
-            <h2>快速开始</h2>
-          </div>
-          <ol class="step-list">
-            <li>
-              <strong>检查设备</strong>
-              <p>确认平台、喷头、墨路、电源线和通讯线连接可靠，无明显松动或漏液。</p>
-            </li>
-            <li>
-              <strong>启动系统</strong>
-              <p>打开主电源，等待控制系统启动完成，并在软件中确认设备在线。</p>
-            </li>
-            <li>
-              <strong>准备打印文件</strong>
-              <p>导入模型，设置层厚、材料、喷墨通道和支撑参数，然后执行切片。</p>
-            </li>
-            <li>
-              <strong>校准并打印</strong>
-              <p>完成平台调平、喷头测试和原点确认后，发送任务并观察首层状态。</p>
-            </li>
-          </ol>
-        </section>
+          <h2 id="manual-scope" data-zh="手册范围" data-en="Manual Scope">手册范围</h2>
+          <p data-zh="当前页面只保留产品概览。后续章节建议按文档站方式逐步拆分为安装、软件、打印流程、维护、故障排查和附录。" data-en="This page currently keeps only the product overview. Future sections should be added in the same documentation style, such as installation, software, printing workflow, maintenance, troubleshooting, and appendices.">
+            当前页面只保留产品概览。后续章节建议按文档站方式逐步拆分为安装、软件、打印流程、维护、故障排查和附录。
+          </p>
 
-        <section class="manual-section" id="operation">
-          <div class="section-heading">
-            <p class="eyebrow">Operation</p>
-            <h2>日常操作</h2>
-          </div>
-          <div class="two-column">
-            <article>
-              <h3>打印前检查</h3>
-              <ul>
-                <li>确认喷头状态正常，无堵孔、挂墨或干涸。</li>
-                <li>确认平台表面清洁，打印材料固定可靠。</li>
-                <li>确认切片参数和材料配置匹配当前任务。</li>
-              </ul>
-            </article>
-            <article>
-              <h3>打印中观察</h3>
-              <ul>
-                <li>观察首层附着和喷墨均匀性。</li>
-                <li>留意异常噪声、轴运动卡顿和错误报警。</li>
-                <li>发现漏墨、撞机或严重偏移时立即暂停。</li>
-              </ul>
-            </article>
-          </div>
-        </section>
-
-        <section class="manual-section" id="maintenance">
-          <div class="section-heading">
-            <p class="eyebrow">Maintenance</p>
-            <h2>维护保养</h2>
-          </div>
+          <h2 id="document-status" data-zh="文档状态" data-en="Document Status">文档状态</h2>
           <table>
-            <thead>
-              <tr>
-                <th>周期</th>
-                <th>项目</th>
-                <th>操作</th>
-              </tr>
-            </thead>
             <tbody>
               <tr>
-                <td>每日</td>
-                <td>喷头清洁</td>
-                <td>检查喷嘴状态，按维护流程清洁喷头表面。</td>
+                <th data-zh="版本" data-en="Version">版本</th>
+                <td>v0.1</td>
               </tr>
               <tr>
-                <td>每周</td>
-                <td>运动部件</td>
-                <td>检查滑轨、同步带、限位开关和线缆拖链。</td>
+                <th data-zh="状态" data-en="Status">状态</th>
+                <td data-zh="草稿，等待补充真实设备参数和操作截图" data-en="Draft, waiting for real device parameters and operation screenshots">草稿，等待补充真实设备参数和操作截图</td>
               </tr>
               <tr>
-                <td>每月</td>
-                <td>系统备份</td>
-                <td>备份设备配置、材料参数和常用切片配置。</td>
+                <th data-zh="发布方式" data-en="Publishing">发布方式</th>
+                <td data-zh="GitHub Pages 静态页面，无需构建步骤" data-en="GitHub Pages static site, no build step required">GitHub Pages 静态页面，无需构建步骤</td>
               </tr>
             </tbody>
           </table>
-        </section>
-
-        <section class="manual-section" id="troubleshooting">
-          <div class="section-heading">
-            <p class="eyebrow">Troubleshooting</p>
-            <h2>故障排查</h2>
-          </div>
-          <div class="issue-list">
-            <details open>
-              <summary>设备无法连接</summary>
-              <p>检查电源、网线或 USB 连接；确认控制板已启动；在软件中重新扫描设备。</p>
-            </details>
-            <details>
-              <summary>喷墨不连续</summary>
-              <p>检查墨路气泡、喷头堵孔、波形配置和喷头温度，必要时执行清洗流程。</p>
-            </details>
-            <details>
-              <summary>模型偏移或错层</summary>
-              <p>检查平台固定、运动轴同步带张力、限位触发和切片坐标设置。</p>
-            </details>
-          </div>
-        </section>
-
-        <section class="manual-section" id="support">
-          <div class="section-heading">
-            <p class="eyebrow">Support</p>
-            <h2>技术支持</h2>
-          </div>
-          <div class="support-box">
-            <p>联系技术支持前，请准备设备型号、固件版本、软件版本、错误截图、日志文件和最近一次操作步骤。</p>
-            <a class="primary-button" href="mailto:support@example.com">发送支持邮件</a>
-          </div>
-        </section>
+        </article>
       </main>
+
+      <aside class="page-toc" aria-label="本页目录" data-zh="本页目录" data-en="Page table of contents" data-aria-only="true">
+        <div class="page-toc-title" data-zh="本页内容" data-en="On this page">本页内容</div>
+        <a href="#overview" data-zh="产品概览" data-en="Overview">产品概览</a>
+        <a href="#positioning" data-zh="设备定位" data-en="Device Positioning">设备定位</a>
+        <a href="#manual-scope" data-zh="手册范围" data-en="Manual Scope">手册范围</a>
+        <a href="#document-status" data-zh="文档状态" data-en="Document Status">文档状态</a>
+      </aside>
     </div>
 
     <script src="script.js"></script>

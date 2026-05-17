@@ -1,54 +1,76 @@
-const sidebar = document.querySelector(".sidebar");
-const menuToggle = document.querySelector(".menu-toggle");
-const tocLinks = Array.from(document.querySelectorAll(".toc a"));
-const sections = Array.from(document.querySelectorAll(".manual-section"));
-const searchInput = document.querySelector("#manual-search");
+const navToggle = document.querySelector(".nav-toggle");
+const sidebar = document.querySelector(".doc-sidebar");
+const languageButtons = Array.from(document.querySelectorAll(".language-button"));
+const navLinks = Array.from(document.querySelectorAll(".doc-nav a, .page-toc a"));
+const sections = Array.from(document.querySelectorAll(".doc-article h1[id], .doc-article h2[id]"));
 
-menuToggle?.addEventListener("click", () => {
-  const isOpen = sidebar.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
-});
+function applyLanguage(lang) {
+  const suffix = lang === "en" ? "en" : "zh";
+  const fallback = suffix === "en" ? "zh" : "en";
 
-tocLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    sidebar.classList.remove("open");
-    menuToggle?.setAttribute("aria-expanded", "false");
-  });
-});
+  document.documentElement.lang = suffix === "zh" ? "zh-CN" : "en";
+  document.title = document.body.dataset[`title${suffix[0].toUpperCase()}${suffix.slice(1)}`] || document.title;
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    const visible = entries
-      .filter((entry) => entry.isIntersecting)
-      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-    if (!visible) {
+  document.querySelectorAll("[data-zh][data-en]").forEach((element) => {
+    const text = element.dataset[suffix] || element.dataset[fallback];
+    if (!text) {
       return;
     }
 
-    tocLinks.forEach((link) => {
-      link.classList.toggle("active", link.getAttribute("href") === `#${visible.target.id}`);
+    if (element.hasAttribute("aria-label")) {
+      element.setAttribute("aria-label", text);
+    }
+
+    if (element.dataset.lang === undefined && element.dataset.ariaOnly === undefined) {
+      element.textContent = text;
+    }
+  });
+
+  languageButtons.forEach((button) => {
+    button.classList.toggle("active", button.dataset.lang === suffix);
+  });
+
+  localStorage.setItem("manualLanguage", suffix);
+}
+
+function closeSidebar() {
+  sidebar?.classList.remove("open");
+  navToggle?.setAttribute("aria-expanded", "false");
+}
+
+navToggle?.addEventListener("click", () => {
+  const isOpen = sidebar.classList.toggle("open");
+  navToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+languageButtons.forEach((button) => {
+  button.addEventListener("click", () => applyLanguage(button.dataset.lang));
+});
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", closeSidebar);
+});
+
+const sectionObserver = new IntersectionObserver(
+  (entries) => {
+    const current = entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+    if (!current) {
+      return;
+    }
+
+    navLinks.forEach((link) => {
+      link.classList.toggle("active", link.getAttribute("href") === `#${current.target.id}`);
     });
   },
   {
-    rootMargin: "-20% 0px -65% 0px",
+    rootMargin: "-20% 0px -70% 0px",
     threshold: [0.1, 0.25, 0.5],
   },
 );
 
-sections.forEach((section) => observer.observe(section));
+sections.forEach((section) => sectionObserver.observe(section));
 
-searchInput?.addEventListener("input", (event) => {
-  const keyword = event.target.value.trim().toLowerCase();
-
-  sections.forEach((section) => {
-    const text = section.textContent.toLowerCase();
-    const matched = !keyword || text.includes(keyword);
-    section.classList.toggle("is-hidden", !matched);
-  });
-
-  tocLinks.forEach((link) => {
-    const target = document.querySelector(link.getAttribute("href"));
-    link.classList.toggle("is-hidden", target?.classList.contains("is-hidden"));
-  });
-});
+applyLanguage(localStorage.getItem("manualLanguage") || "zh");

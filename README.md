@@ -1,6 +1,6 @@
 # 3D Inkjet Printer Manual
 
-这是 3D 喷墨打印机产品使用手册的静态页面原型。
+这是 3D 喷墨打印机产品使用手册的静态页面原型。当前页面保留产品概览入口，采用类似 Klipper / Material for MkDocs 的文档站布局，并支持中文 / English 两种语言切换。
 
 ## 打开方式
 
@@ -23,4 +23,4 @@
 - `.nojekyll`：让 GitHub Pages 按静态文件直接发布
 - `index.html`：页面结构和手册内容
 - `styles.css`：页面样式
-- `script.js`：目录高亮、搜索和移动端菜单交互
+- `script.js`：语言切换和移动端菜单交互
