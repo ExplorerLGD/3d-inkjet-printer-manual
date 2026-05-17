@@ -1,8 +1,3 @@
----
-hide:
-  - navigation
----
-
 # Overview
 
 This development kit is designed for DIY 3D printing enthusiasts. It provides a complete solution covering hardware, materials, and slicing software.

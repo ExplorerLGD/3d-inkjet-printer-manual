@@ -19,6 +19,10 @@ nav:
   - "\u6982\u8ff0": index.md
   - "\u5b89\u88c5\u548c\u914d\u7f6e":
       - "SD\u5361": installation/sd-card.md
+  - English:
+      - Overview: en/index.md
+      - Installation and Configuration:
+          - SD Card: en/installation/sd-card.md
 
 extra:
   alternate:

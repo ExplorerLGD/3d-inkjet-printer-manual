@@ -1,8 +1,3 @@
----
-hide:
-  - navigation
----
-
 # SD Card
 
 The SD card stores the system image and boot configuration. To ensure stable startup and reliable file access, use a fast and reliable SD card.
