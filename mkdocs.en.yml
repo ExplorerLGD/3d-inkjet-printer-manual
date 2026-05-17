@@ -1,14 +1,14 @@
 site_name: 3D Inkjet Printer Documentation
 site_description: 3D inkjet printer product manual
-site_url: https://explorerlgd.github.io/3d-inkjet-printer-manual/
+site_url: https://explorerlgd.github.io/3d-inkjet-printer-manual/en/
 repo_name: 3d-inkjet-printer-manual
-docs_dir: docs/zh
-site_dir: site
+docs_dir: docs/en
+site_dir: site/en
 
 theme:
   name: material
   custom_dir: overrides
-  language: zh
+  language: en
   features:
     - navigation.top
     - toc.follow
@@ -18,12 +18,12 @@ theme:
       accent: cyan
 
 nav:
-  - "\u6982\u8ff0": index.md
-  - "\u5b89\u88c5\u548c\u914d\u7f6e":
-      - "SD\u5361": installation/sd-card.md
+  - Overview: index.md
+  - Installation and Configuration:
+      - SD Card: installation/sd-card.md
 
 extra:
-  current_language: zh
+  current_language: en
   alternate:
     - name: "\u4e2d\u6587"
       lang: zh

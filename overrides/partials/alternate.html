@@ -3,24 +3,22 @@
   <div class="md-select">
     {% set icon = config.theme.icon.alternate or "material/translate" %}
     {% set current_url = page.url if page and page.url else "" %}
-    {% set is_english = current_url.startswith("en/") %}
     {% set current_path = current_url.rstrip("/") %}
     {% set depth = current_path.split("/") | length if current_path else 0 %}
     {% set root = "../" * depth %}
-    {% set zh_target = current_url[3:] if is_english else current_url %}
-    {% set en_target = current_url[3:] if is_english else current_url %}
+    {% set is_english = config.extra.current_language == "en" %}
     <button class="md-header__button md-icon" aria-label="{{ lang.t('select.language') }}">
       {% include ".icons/" ~ icon ~ ".svg" %}
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
         <li class="md-select__item">
-          <a href="{% if is_english %}{{ root }}{{ zh_target }}{% else %}./{% endif %}" hreflang="zh" class="md-select__link">
+          <a href="{% if is_english %}{{ root }}../{{ current_url }}{% else %}./{% endif %}" hreflang="zh" class="md-select__link">
             中文
           </a>
         </li>
         <li class="md-select__item">
-          <a href="{% if is_english %}./{% else %}{{ root }}en/{{ en_target }}{% endif %}" hreflang="en" class="md-select__link">
+          <a href="{% if is_english %}./{% else %}{{ root }}en/{{ current_url }}{% endif %}" hreflang="en" class="md-select__link">
             English
           </a>
         </li>
