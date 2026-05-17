@@ -1,9 +1,0 @@
-site_name: 3D Inkjet Printer Manual
-docs_dir: docs
-site_dir: site
-theme:
-  name: readthedocs
-  language: zh
-
-nav:
-  - 首页: index.md
