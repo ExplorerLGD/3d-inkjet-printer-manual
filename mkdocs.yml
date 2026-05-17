@@ -1,0 +1,37 @@
+site_name: 3D Inkjet Printer Documentation
+site_description: 3D inkjet printer product manual
+repo_name: 3d-inkjet-printer-manual
+
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - toc.follow
+  palette:
+    - scheme: default
+      primary: blue grey
+      accent: cyan
+
+nav:
+  - 概述: index.md
+  - English:
+      - Overview: en/index.md
+
+extra:
+  alternate:
+    - name: 中文
+      link: /3d-inkjet-printer-manual/
+      lang: zh
+    - name: English
+      link: /3d-inkjet-printer-manual/en/
+      lang: en
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true

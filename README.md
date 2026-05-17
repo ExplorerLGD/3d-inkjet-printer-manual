@@ -1,11 +1,11 @@
 # 3D Inkjet Printer Manual
 
-这是 3D 喷墨打印机产品使用手册的静态页面原型。当前页面保留产品概览入口，采用类似 Klipper / Material for MkDocs 的文档站布局。
+这是 3D 喷墨打印机产品使用手册。当前页面保留“概述”入口，使用 MkDocs 和 Material for MkDocs 构建。
 
-语言版本采用独立页面：
+语言版本采用独立 Markdown 页面：
 
-- `index.html`：中文版本
-- `en/index.html`：English version
+- `docs/index.md`：中文版本
+- `docs/en/index.md`：English version
 
 ## 打开方式
 
@@ -13,20 +13,26 @@
 
 ## GitHub Pages
 
-这个仓库可以直接作为 GitHub Pages 静态站点发布：
+这个仓库使用 GitHub Actions 构建并发布到 GitHub Pages：
 
 1. 打开仓库的 `Settings`。
 2. 进入 `Pages`。
-3. `Build and deployment` 选择 `Deploy from a branch`。
-4. `Branch` 选择 `main`，目录选择 `/root`。
-5. 保存后访问 GitHub Pages 生成的站点地址。
+3. `Build and deployment` 选择 `GitHub Actions`。
+4. 提交并推送到 `main` 后，`.github/workflows/deploy.yml` 会自动构建并发布站点。
 
-仓库根目录已包含 `index.html` 和 `.nojekyll`，不需要额外构建步骤。
+本地预览：
+
+```bash
+pip install -r requirements.txt
+mkdocs serve
+```
+
+如果仓库名不是 `3d-inkjet-printer-manual`，需要同步修改 `mkdocs.yml` 里的 `extra.alternate.link` 路径。
 
 ## 文件结构
 
-- `.nojekyll`：让 GitHub Pages 按静态文件直接发布
-- `index.html`：中文页面
-- `en/index.html`：英文页面
-- `styles.css`：页面样式
-- `script.js`：移动端目录和本页目录高亮
+- `mkdocs.yml`：MkDocs 和 Material 主题配置
+- `docs/index.md`：中文概述页
+- `docs/en/index.md`：英文概述页
+- `requirements.txt`：构建依赖
+- `.github/workflows/deploy.yml`：GitHub Pages 自动部署工作流
