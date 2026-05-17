@@ -1,0 +1,20 @@
+site_name: 3D Inkjet Printer Manual
+site_description: 3D 打印喷墨打印机用户手册
+site_author: ExplorerLGD
+repo_name: github/ExplorerLGD/3d-inkjet-printer-manual
+nav:
+  - 首页: index.md
+  - 快速开始: getting-started.md
+  - 安装与设置: installation.md
+  - 使用指南: usage.md
+  - 支持: support.md
+docs_dir: docs
+site_dir: site
+theme:
+  name: readthedocs
+  language: zh
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ExplorerLGD/3d-inkjet-printer-manual
