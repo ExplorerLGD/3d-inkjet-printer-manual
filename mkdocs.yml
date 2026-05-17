@@ -4,6 +4,7 @@ repo_name: 3d-inkjet-printer-manual
 
 theme:
   name: material
+  custom_dir: overrides
   language: zh
   features:
     - navigation.tabs
@@ -16,17 +17,17 @@ theme:
       accent: cyan
 
 nav:
-  - 概述: index.md
+  - "\u6982\u8ff0": index.md
   - English:
       - Overview: en/index.md
 
 extra:
   alternate:
-    - name: 中文
-      link: /3d-inkjet-printer-manual/
+    - name: "\u4e2d\u6587"
+      link: ./
       lang: zh
     - name: English
-      link: /3d-inkjet-printer-manual/en/
+      link: en/
       lang: en
 
 markdown_extensions:
