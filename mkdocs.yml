@@ -8,7 +8,6 @@ theme:
   custom_dir: overrides
   language: zh
   features:
-    - navigation.tabs
     - navigation.sections
     - navigation.top
     - toc.follow
@@ -19,8 +18,6 @@ theme:
 
 nav:
   - "\u6982\u8ff0": index.md
-  - English:
-      - Overview: en/index.md
 
 extra:
   alternate:

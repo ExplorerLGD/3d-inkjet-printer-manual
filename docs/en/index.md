@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # Overview
 
 This page is the entry point for the 3D inkjet printer manual.
