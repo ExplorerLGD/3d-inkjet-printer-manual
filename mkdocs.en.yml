@@ -21,6 +21,8 @@ nav:
   - Overview: index.md
   - Installation and Configuration:
       - SD Card: installation/sd-card.md
+      - Power Requirements: installation/power-requirements.md
+      - Klipper Notes: installation/klipper-notes.md
 
 extra:
   current_language: en

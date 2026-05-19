@@ -21,6 +21,8 @@ nav:
   - "\u6982\u8ff0": index.md
   - "\u5b89\u88c5\u548c\u914d\u7f6e":
       - "SD\u5361": installation/sd-card.md
+      - "\u7535\u6e90\u8981\u6c42": installation/power-requirements.md
+      - "Klipper 注意事项": installation/klipper-notes.md
 
 extra:
   current_language: zh
