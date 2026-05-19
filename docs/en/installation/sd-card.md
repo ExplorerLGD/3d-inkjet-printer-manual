@@ -4,7 +4,7 @@ The SD card stores the system image and boot configuration. To ensure stable sta
 
 ## Flash the System Image
 
-Use DiskImager to flash the system image to the SD card.
+Use balenaEtcher to flash the system image to the SD card (download: [balenaEtcher](https://www.balena.io/etcher/)).
 
 ## Modify the Wi-Fi Configuration
 
